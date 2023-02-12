@@ -1,7 +1,9 @@
 # BlockchainAI
 Blockchain based AI model exploration. 
 
-This Discord bot is used to mine messages from a Discord channel and save the messages to a Firebase Realtime Database. The mined messages are tokenized using the Keras Tokenizer and stored in the database as a blockchain. When a message with the content "!mine" is sent in the channel, the bot will mine all of the cached messages, tokenize them, and create a new block in the blockchain. The block will contain the tokenized messages, a timestamp, the anonymized username of the user who sent the message, a word index of the tokenized words, and a hash of the previous block. The block's hash will be used as the identifier for the block in the database. The private key for the block's hash is generated using the cryptography library and sent to the user who sent the "!mine" message. Additionally a block will automatically mine every time the training data reaches a full block size of 2048.
+This Discord bot is used to mine messages from a Discord channel and save the messages to a Firebase Realtime Database. The mined messages are tokenized using the Keras Tokenizer and stored in the database as a blockchain. When a message with the content "!mine" is sent in the channel, the bot will mine all of the cached messages, tokenize them, and create a new block in the blockchain. The block will contain the tokenized messages, a timestamp, the anonymized username of the user who sent the message, a word index of the tokenized words, and a hash of the previous block. The block's hash will be used as the identifier for the block in the database. 
+
+The private key for the block's hash is generated using the cryptography library and sent to the user who sent the "!mine" message. Additionally a block will automatically mine every time the training data reaches a full block size of 2048 the private key being sent to the last user to send the message.
 
 The potential uses for the Discord bot along with a data preprocessing script are:
 
